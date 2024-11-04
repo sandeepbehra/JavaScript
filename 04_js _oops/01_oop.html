@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user = {
+    username : "sandy",
+    loginCount : 17,
+    signedIn : true,
+
+    getUserDetails : function(){
+        console.log("Get user details from Database");
+        console.log(` userName : ${this.username}`);
+        console.log(this);
+    }
+    //console.log(this);
+}
+
+
+console.log(user.username);
+console.log(user.getUserDetails());
+console.log(this);
+
+function User(name , id , log)
+{
+    this.name = name;
+    this.id = id;
+    this.log = log;
+
+    this.greeting = function(){
+        console.log(` wlcome to ${this.name}`);
+    }
+
+    return this;
+}
+ 
+const userone = new User("Shravya", 9 , true);
+const usertwo = new User("Nalini" ,7, false);
+console.log(usertwo.id);
+console.log(userone.id);
+    </script>
+</body>
+</html>

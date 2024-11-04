@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge two array</title>
+</head>
+<body>
+    <script>
+    let d1 = [10,20,40,80,300,420]
+    let d2 =[22,44,55,110,808,707]
+    let d3 =[]
+    // let d3 = [...d1,...d2];
+    // console.log(d1.reverse());
+    let i=0,j=0,k=0;
+    while(i<d1.length && j<d2.length)
+    {
+        if(d1[i]<d2[j])
+        {
+            d3[k]=d1[i]
+            i++
+        }
+        else{
+            d3[k]=d2[j]
+            j++
+        }
+        k++
+    }
+    while(i<d1.length)
+    {
+        d3[k]=d1[i]
+        i++
+        k++
+    }
+    while(j<d2.length)
+    {
+        d3[k]=d2[j]
+        j++
+        k++
+    }
+
+    //  d3 =[...d1,...d2]
+     console.log(d1);
+     console.log(d2);
+     console.log(d3);
+
+</script>
+</body>
+</html>

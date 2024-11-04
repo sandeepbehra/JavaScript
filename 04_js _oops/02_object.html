@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function multpleBy5(num){
+            
+            return num*5;
+        }
+        multpleBy5.power = 8;
+        // console.log(multpleBy5(6));
+        // console.log(multpleBy5.power);
+        // console.log(multpleBy5.prototype);
+         
+        function createUser(userName, price)
+        {
+            this.userName = userName;
+            this.price = price;
+        }
+        createUser.prototype.increment = function(){
+            this.price++;
+        }
+        createUser.prototype.printMe =function(){
+            console.log( `print price :- ${this.price}`);
+        }
+        const u1 = new createUser("chai", 25);
+        const u2 = new createUser("tea", 250);
+        //console.log(`${u2.price}`);
+
+
+        u1.increment();
+        u1.printMe();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 2;
+
+var c = 2;
+
+
+
+function b(){
+
+var x = 2;
+
+var c = 4
+
+console.log(c)
+
+}
+
+
+
+console.log(a);
+
+console.log(this.a);
+
+console.log(this.c)
+
+console.log(this.x)
+
+console.log(window.a)
+
+console.log(window.x)
+
+console.log(b());
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class ="container" style="display: inline;">
+        <form id="my-form" style="background-color: skyblue;">
+            <h1>Student Details</h1>
+            <div>
+                <div>
+                    <label style="color:black; font-size: 20px;"> Name: </label>
+                    <input type="text" id="input1">
+
+                </div><br><br>
+            <div>
+                <label style="color: black; font-size: 20px;">Emails:</label>
+                <input type="text" id="input2">
+            </div>
+            </div><br><br>
+            <input type="submit" id="sub">
+        </form>
+    </section>
+    <div style="background-color: rgb(43, 226, 89);"> ghkjkj</div>
+<script>
+    var subbtn = document.getElementById('sub');
+    var inp1 = document.getElementById('input1');
+    var inp2 = document.getElementById('input2');
+    subbtn.addEventListener('click', localStore);
+    function localStore(e)
+    {
+        e.preventDefault();
+      var s1 = inp1.value;
+      var s2 = inp2.value;
+      console.log(s1);
+      localStorage.setItem('name of student', s1)
+      localStorage.setItem('email of student', s2) 
+    }
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

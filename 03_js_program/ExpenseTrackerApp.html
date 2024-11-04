@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <form> 
+            <label>Choose expenses Amount:</label>
+            <input id="inp1" >
+            <label>Choose description:</label>
+            <input id="inp2">
+            <label>Chooose a category:</label>
+            <select id="inp3">
+                <option>On Vacation</option>
+                <option>On weekend</option>
+                <option>on winter vacation</option>
+                <option>On  summer Vacation</option>
+
+            </select>
+            <input type="submit" id="sub" >
+        </form>
+        <ul id ="ullist"></ul>
+    </section>
+    <script>
+        const inp1 = document.getElementById("inp1");
+        const inp2 = document.getElementById("inp2");
+        const inp3 = document.getElementById("inp3");
+        document.getElementById('sub').addEventListener('click' , local);
+        function local(e)
+        {
+            e.preventDefault();
+            const newob ={
+               amount :inp1.value ,
+               desc : inp2.value  ,
+               category : inp3.value 
+            };
+            const newobnew = JSON.stringify(newob);
+            localStorage.setItem(newob.category,newobnew)
+            ShowinPage(newob);
+        }
+        
+        function ShowinPage(newob){
+            const li = document.createElement('li');
+            li.textContent= newob.amount+"-"+newob.desc+"-"+newob.category+"-"
+            const dltbtn = document.createElement('input')
+            dltbtn.type = 'button';
+            dltbtn.value = "Delete Expense"
+            const editbtn = document.createElement('input')
+            editbtn.type = 'button';
+            editbtn.value = "Edit Expense"
+            li.appendChild(dltbtn)
+            li.appendChild(editbtn);
+            document.getElementById('ullist').appendChild(li);
+            dltbtn.onclick=()=>{
+                localStorage.removeItem(newob.category)
+                document.getElementById('ullist').removeChild(li)
+
+            }
+            editbtn.onclick=()=>{
+                localStorage.removeItem(newob.category)
+                document.getElementById('ullist').removeChild(li)
+                inp1.value =newob.amount;
+                inp2.value =newob.desc;
+                inp3.value =newob.category;
+            }
+        }
+    
+    
+
+    </script>
+</body>
+</html>

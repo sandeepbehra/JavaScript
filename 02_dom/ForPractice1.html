@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .liclass{
+           background-color: orangered; 
+        }
+        .bclass{
+
+        background-color: #212121;
+        color: #ffff;
+        }
+    </style>
+</head>
+<body class="bclass">
+    <ul class="main" id = "myid">
+        <li class ="liclass" style="font-size: 39px;">one <span style="display: none;">Gajab</span></li>
+        <li class ="liclass"style="font-size: 39px; background-color: white; color:black">two</li>
+        <li class ="liclass"style="font-size: 39px; background-color: green">three</li>
+        <li class ="liclass"style="font-size: 39px;background-color: black">four</li>
+    </ul>
+    <script>
+        const v = document.querySelector('.liclass')
+        console.log(v.innerHTML);
+        console.log(v.textContent);
+        //console.log(v);
+    </script>
+</body>
+</html>

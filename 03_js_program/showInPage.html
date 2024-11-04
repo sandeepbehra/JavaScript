@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class ="container">
+        <form id="my-form">
+            <h1>Student Details</h1>
+            <div>
+                <div>
+                    <label>Name:</label>
+                    <input type="text" id="input1">
+
+                </div><br><br>
+            <div>
+                <label>Emails:</label>
+                <input type="text" id="input2">
+            </div>
+            <br><br>
+            <div>
+                <label>Phone:</label>
+                <input type="number" id="input3">
+            </div>
+            </div><br><br>
+            <input type="submit" id="sub">
+            <br><br>
+            
+        </form>
+        <ul id="list">
+
+        </ul>
+    </section>
+<script>
+    var subbtn = document.getElementById('sub');
+    var inp1 = document.getElementById('input1');
+    var inp2 = document.getElementById('input2');
+    var inp3 = document.getElementById('input3');
+    subbtn.addEventListener('click', localStore);
+    function localStore(e)
+    {
+        e.preventDefault();
+      var s1 = inp1.value;
+      var s2 = inp2.value;
+      var s3 = inp3.value;
+      //localStorage.setItem(s2,`${s1}-${s2}-${s3}`);
+
+
+      let Myobj ={
+        name : s1,
+        email : s2,
+        phone : s3
+        // s1,
+        // s2,
+        // s3
+      };
+      let myjobs = JSON.stringify(Myobj);
+      localStorage.setItem(Myobj.email, myjobs);
+     // localStorage.setItem('email of student', s2)
+     ShowOnPage(Myobj)
+    }
+    function ShowOnPage(Myobj)
+    {
+        var s1 = inp1.value;
+      var s2 = inp2.value;
+      var s3 = inp3.value;
+        const ulItem = document.getElementById('list');
+        const liItem = document.createElement('li');
+        liItem.textContent = Myobj.name + " - " + Myobj.email + " - " + Myobj.phone;
+      // li.textContent=s1+"-"+s2+"-"+s3;
+
+        const dltbtn = document.createElement('input');
+        dltbtn.value = "Delete";
+        dltbtn.type = "button";
+        const edtbtn = document.createElement('input');
+        edtbtn.value = "Edit";
+        edtbtn.type = "button";
+        liItem.appendChild(dltbtn);
+        liItem.appendChild(edtbtn);
+
+        ulItem.appendChild(liItem);
+
+        dltbtn.onclick = () =>{
+            localStorage.removeItem(Myobj.email);
+            ulItem.removeChild(liItem);
+        }
+        edtbtn.onclick = () =>{
+            localStorage.removeItem(Myobj.email);
+            ulItem.removeChild(liItem);
+            inp1.value = Myobj.name;
+            inp2.value = Myobj.email;
+            inp3.value = Myobj.phone;
+
+
+        }
+    }
+</script>
+</body>
+</html>

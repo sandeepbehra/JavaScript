@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Array</title>
+</head>
+<body>
+    <script>
+        let d1 = [10,20,40,80,30,22]
+        let d2 =[22,44,55,11,88,77,5]
+        let d3= []
+        for(let i =0;i<d1.length;i++)
+        {
+            d3[i]=d1[i]
+        }
+        for(let i =0;i<d2.length;i++)
+        {
+            d3[d1.length+i]=d2[i]
+        }
+        console.log(d1);
+        console.log(d2)
+        console.log(d3);;
+    </script>
+    
+</body>
+</html>

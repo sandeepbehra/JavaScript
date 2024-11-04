@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //Promise one
+        const promiseOne = new Promise(function(resolve , reject){
+            setTimeout(function(){
+                console.log("Async Task1 is executed");
+                resolve();
+            } , 1000)
+        })
+
+        promiseOne.then(function(){
+            console.log("PromiseOne is consume");
+        })
+
+
+
+        //Promise two
+        new Promise(function(resolve , reject){
+            setTimeout(function(){
+                console.log("Async Task2 is executed");
+                resolve();
+            } , 1000)
+        }).then(function(){
+            console.log("PromiseTwo is consume"); 
+        })
+
+
+        //Promise Three
+        const promiseThree = new Promise(function(resolve , reject){
+            setTimeout(function(){
+                console.log("Async Task3 is executed");
+                resolve({username: "sandy" , password: "123"});
+            } , 1000)
+        })
+
+        promiseThree.then(function(user){
+            console.log(user);
+        })
+        
+
+        //Promise Four
+        const promiseFour = new Promise(function(resolve , reject){
+            setTimeout(function(){
+                let error =false;
+                if(!error)
+                {
+                    resolve({username: "sandy" , password: "123"});
+                }
+                else{
+                    reject('Error : rejected');
+
+                }
+            } , 1000)
+        })
+
+        promiseFour
+        .then(function(user){
+         return user.username
+        })
+        .then(function(name){
+         console.log(name)
+        })
+        .catch(function(er){
+        console.log(er);
+        })
+        .finally(function(){
+        console.log("run defeinetly");
+        })
+
+
+
+         //Promise Five handled by async and await
+         const promiseFive = new Promise(function(resolve , reject){
+            setTimeout(function(){
+                let error =true;
+                if(!error)
+                {
+                    resolve({username: "sandy" , password: "123"});
+                }
+                else{
+                    reject('Error :  Js is rejected');
+
+                }
+            } , 1000)
+        })
+        
+        async function consumeFivePromise(){
+
+            try {
+                const response = await promiseFive;
+                console.log(response);
+
+            } catch (error) {
+                console.log(error);
+                
+            }
+        }
+
+        consumeFivePromise();
+
+
+        // using fetch and handled by try and catch(async and await)
+
+        async function getAll()
+        {
+            try {
+                const response = await fetch('https://dummy.restapiexample.com/api/v1/employees')
+                const data =  await response.json();
+                console.log(data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        getAll();
+    
+    
+        // using fetch and handled by then and catch
+
+        fetch('https://reqres.in/api/users?page=2')
+        .then((response)=>{
+        return response.json()
+        })
+        .then((data)=>{
+         console.log(data);
+        })
+        .catch((err)=>{
+        console.log(err);
+        })
+
+    </script>
+</body>
+</html>

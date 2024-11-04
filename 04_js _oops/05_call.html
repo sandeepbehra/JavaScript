@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function setU(u){
+            this.u = u;
+            console.log("called");
+        }
+        function Create(u , i, p)
+        {
+            this.i = i;
+            this.p =p;
+            setU.call(this,u)
+            //setU(u)
+
+            this.showMe = function(){
+                console.log(this);
+            }
+
+        }
+        const u1 = new Create("sandeep",9,"abd")
+        u1.showMe()
+    </script>
+</body>
+</html>

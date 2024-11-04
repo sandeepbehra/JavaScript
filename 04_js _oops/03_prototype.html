@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = "    sandeep   ";
+        // console.log(name.length);
+        // console.log(name.trim().length);
+        let myHeros =["salman","anil"]
+        // console.log(myHeros.length);
+
+        let heroPower ={
+            thor : "hammer",
+            spiderman :"sling",
+
+            getSpiderPower: function()
+            {
+                console.log(`Spidy Power is${this.spiderman}`);
+            }
+        }
+        
+        Object.prototype.sandeep = function()
+        {
+            console.log(`this is available for all object and this time calling by ${this}`)
+        }
+        Array.prototype.heysandeep= function(){
+            console.log(`this is available for only array and this time calling by ${this}`)
+        }
+        name.sandeep();
+        myHeros.sandeep();
+        heroPower.sandeep();
+        myHeros.heysandeep();
+        // heroPower.heysandeep();
+
+        //Inheritance
+
+        const User ={
+            name:"sandeep",
+            email: "sand@hjxsj"
+        }
+
+        const Teacher ={
+            name:"salini",
+            pass: "1233"
+        }
+        const TeachingSupport ={
+            isAvailable : true
+        }
+
+        const TAsupport ={
+            makeAssignment : "js",
+            __prototype__ :TeachingSupport
+        }
+
+        Teacher.__prototype__=User;
+
+        //modern syntax for inheritance
+
+        Object.setPrototypeOf(TeachingSupport,Teacher);
+
+
+        String.prototype.truelength = function(){
+            console.log(`true length is ${this.trim().length}`)
+        }
+       // String.prototype.aslilength = this.trim().length;
+         let anotherName = "chai    ";
+         anotherName.truelength();
+         console.log(anotherName.length);
+         //console.log(anotherName.aslilength);
+    </script>
+</body>
+</html>

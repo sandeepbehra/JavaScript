@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const di = document.createElement('div')
+        //di.className = "mydi"
+        di.id =" mydid"
+        di.setAttribute("class","mydidd")
+        di.setAttribute("title","Gabber")
+        const text = document.createTextNode('CWS')
+        di.appendChild(text)
+        console.log(di.textContent);
+        console.log(di);
+        di.style.backgroundColor="skyblue"
+        document.body.appendChild(di)
+
+    </script>
+</body>
+</html>

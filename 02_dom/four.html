@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul class ="language">
+        <li>JavaScript</li>
+    </ul>
+    
+
+    <script>
+        function addLanguage(lan)
+        {
+            const l = document.createElement('li')
+            l.appendChild(document.createTextNode(lan))
+            document.querySelector('.language').appendChild(l)
+        }
+        addLanguage('Java')
+        addLanguage('cpp')
+        addLanguage('Python')
+        addLanguage('vB.Net')
+
+        const p = document.querySelector('.language')
+        const sl = document.querySelector("li:nth-child(3)")
+        //sl.style.backgroundColor = "green"
+        //console.log());
+        sl.outerHTML='<li>C++</li>'
+        const sl2 = document.querySelector("li:nth-child(3)")
+        //sl2.remove()
+        sl2.innerHTML="Js"
+        const newl  = document.createElement('li')
+        newl.innerText='jK'
+
+        sl2.replaceWith(newl)
+    </script>
+</body>
+</html>

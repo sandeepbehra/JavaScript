@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traverse and Access in an Array</title>
+</head>
+<body style="background-color: black; color: antiquewhite;">
+
+    <input type="text" id="in"><br><br>
+    <button id="butt" >check</button>
+    <script> 
+    //document.write("sandy")
+    let arr = [10,20,30,40,50,60,70,80,90,100]
+    // for(let i=0;i<arr.length;i++)
+    // {
+    //     document.write(`Array ${i} is ${arr[i]} <br>`)
+    // }
+    //document.write(arr[9])
+
+    document.querySelector('#butt').addEventListener('click', function(){
+       /// alert(document.querySelector('#in').value)
+        let l =parseInt(document.querySelector('#in').value)
+        if(l<0 ||l>=arr.length ||isNaN(l))
+            {
+                alert("Please enter valid number")
+            }
+        else
+        alert(arr[l])
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+    
+</body>
+</html>
