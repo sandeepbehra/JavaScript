@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animatio Task</title>
+
+
+    <style>
+        .container {
+            background-color: black;
+            width: 75vw;
+            height: 500px;
+            display: flex;
+            justify-content:space-around;
+            align-items: flex-end;
+            position: relative;
+
+           
+          
+
+        }
+        
+        .bar {
+            height: 100%;
+            width: 30%;
+            transition: height 0.5s ease-in;
+        }
+
+        /* .bar:hover{    
+            height: 20vh;
+            width: 5vw;
+            background-color: blue;
+        }  */
+        #bar1 {
+            background-color: blueviolet;
+        }
+
+        #bar2 {
+            background-color: rgb(216, 31, 145);
+        }
+
+        #bar3 {
+            background-color: rgb(224, 35, 35);
+        }
+
+        #bar4 {
+            background-color: rgb(228, 231, 28);
+        }
+
+        #bar5 {
+            background-color: rgb(32, 121, 43);
+        }
+
+       #controls{
+        margin-left: 100px;
+
+       }
+
+       #controls button{
+        margin-left: 200px;
+        /* background-color: aquamarine;
+        color: black; */
+
+       }
+
+       #start{
+        background-color: blueviolet;
+        color: white;
+       }
+       #reset{
+        background-color:rgb(60, 4, 216);
+        color: white;
+       }
+       #stop{
+        background-color:red;
+        color: white;
+       }
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+        <div id="bar4" class="bar"></div>
+        <div id="bar5" class="bar"></div>
+    </div><br><br>
+<div id="controls"> 
+    <button id="start">Start</button>
+   <button id ="reset">Reset</button>
+   <button id="stop">Stop</button>
+</div>
+  
+
+
+
+<script>
+    let startButton = document.getElementById('start');
+    let resetButton = document.getElementById('reset');
+    let stopButton = document.getElementById('stop');
+
+    let bars = document.querySelectorAll('.bar')
+
+    let IntervalId;
+
+    startButton.addEventListener('click',()=>{
+    // if(IntervalId) 
+    // return ;
+      IntervalId = setInterval(()=>{
+        bars.forEach(d=>{
+            let h = Math.random()*100;
+
+            d.style.height = `${h}%`;
+        })
+      },500)
+     
+    })
+
+ resetButton.addEventListener('click', ()=>{
+    clearInterval(IntervalId);
+    // IntervalId = null;
+    bars.forEach(d=>{
+            // let h = Math.random()*100;
+
+            d.style.height = `100%`;
+        })
+ })
+ stopButton.addEventListener('click', ()=>{
+    clearInterval(IntervalId);
+    // IntervalId = null;
+   
+ })
+
+
+
+
+
+</script>
+
+</body>
+
+</html>
+
+
+
