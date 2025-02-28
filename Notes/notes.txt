@@ -1,4 +1,4 @@
-------------------memory in javascript-------------------
+------------------27-feb-25--memory in javascript-------------------
  
  there are two types of memory in javascript........
  => stack (all primitive data types variable store in stack memory) || heap(all non-primitive datatype variable are store in heap memory)
@@ -6,7 +6,7 @@
 1. in stack , if we assign another variable then it will be  copy of the original value , doesn't reflects changes in original variable
 2. in heap , if we assig  another variable then it will be reference of the variable and reflect the changes in original variable also.
 
------------------------typeof--------------------------
+-------------------27-feb-25--typeof--------------------------
 
 1. undefined => undefined
 2. null      => object
@@ -15,7 +15,7 @@
 
 note:- ALL NON-PRIMITIVE DATATYPES'S TYPE IS object
 
------------------------datatypes----------------------
+-------------------27-feb-25--datatypes----------------------
 
 mainly there two types
 
@@ -25,7 +25,7 @@ mainly there two types
 primitive--------->|number|string|bigInt|symbol|boolean
 non-primitive----->|object|array|function
 
--------------------------null--------------------------
+--------------------27-feb-25--null--------------------------
 
 1. null is not 0.
 2. null represents empty
@@ -35,3 +35,15 @@ non-primitive----->|object|array|function
 6. null == 0-----> false
 7. null >=0-----> true ( < or > convert null to 0 , == doesn't convert null to 0 )
 
+----------------------28-feb--string----------------------------
+
+string in javascript---> there are two types to define
+
+1. let address = "pakargaon"
+2. let address = new String("pakargaon")
+
+and there are many string function like:-
+
+1. substring(index1, index2)---> it return new string , index1 included and index2 excluded
+2. slice(index1,index2)--------->it return new string, difference is it could take negative indexes
+3. trim() ----------> it removes spaces from front and end 
